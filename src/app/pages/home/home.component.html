@@ -1,0 +1,21 @@
+<mat-sidenav-container class="example-container">
+    <!-- Sidenav content -->
+    <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen">
+      <mat-toolbar>Menu</mat-toolbar>
+      <mat-nav-list>
+        <a mat-list-item [routerLink]="'movies'" (click)="toggleSidenav()">Peliculas</a>
+        <a mat-list-item [routerLink]="'converter'" (click)="toggleSidenav()">Conversor de Divisas</a>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <!-- Main content -->
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <mat-icon (click)="toggleSidenav()">menu</mat-icon>
+        XOLIT
+      </mat-toolbar>
+      <div class="content">
+        <router-outlet />
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

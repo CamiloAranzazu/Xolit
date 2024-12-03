@@ -1,0 +1,46 @@
+<div class="container">
+    <div>
+        <p class="title_style">Historial</p>
+    </div>
+    <div class="filters">
+        <div class="filter">
+            <label for="fromCurrency">ORIGEN</label>
+            <mat-select [(ngModel)]="fromCurrency">
+                @for (currency of currencies; track $index) {
+                <mat-option [value]="currency">{{currency}}</mat-option>
+                }
+            </mat-select>
+        </div>
+    
+        <div class="filter">
+            <label for="toCurrency">DESTINO</label>
+            <mat-select [(ngModel)]="toCurrency">
+            @for (currency of currencies; track $index) {
+                <mat-option [value]="currency">{{currency}}</mat-option>
+            }
+            </mat-select>
+        </div>
+    </div>
+
+    <div class="styled-input wide">
+        <input type="number" [(ngModel)]="amount" id="amount" min="0" />
+        <label>Cantidad</label> 
+    </div>
+  
+    <div>
+      <h3>
+        <button mat-raised-button (click)="convert()">Resultado</button></h3>
+      <p>{{ amount }} {{ fromCurrency }} = {{ result.toFixed(2) }} {{ toCurrency }}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div>
+        <p class="title_style">Historial</p>
+    </div>
+    @for (item of history; track $index) {
+        <div class="itemList">{{item}}</div>
+    }
+  <button mat-raised-button (click)="clearHistory()">Borrar Historial</button>
+
+  </div>

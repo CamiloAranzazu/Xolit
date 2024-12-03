@@ -1,0 +1,25 @@
+.example-container {
+    height: 100vh; /* Full screen height */
+  }
+  
+  mat-toolbar {
+    background: #060528; /* Primary toolbar color */
+    color: white;
+    border-bottom: 3px solid #505076;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+    background-color: #eeeeee;
+  }
+
+
+
+  @media (max-width: 768px) {
+    mat-sidenav {
+      width: 200px;
+    }
+  }
+
+ 
+

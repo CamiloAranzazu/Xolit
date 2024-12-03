@@ -1,0 +1,32 @@
+<div>
+    <p class="title_style">Peliculas</p>
+</div>
+<form [formGroup]="formSearch"  class="search-bar">
+	<input type="search"  formControlName="search" (input)="onInput()"  name="search" pattern=".*\S.*" required autocomplete="off">
+	<button class="search-btn" type="button" (click)="onSearch()">
+		<span>Search</span>
+	</button>
+</form>
+
+@if (movies.length === 0) {
+    <div class="noData">
+        Hacer click en la lupa
+    </div>
+}
+
+<div class="listMovies">
+@for (movie of movies; track $index) {
+    <div class="card">
+        <div class="imagen-con-fecha">
+            <img src="{{movie.Poster}}" alt="Imagen" class="imagen">
+            <div class="fecha">{{movie.Year}}</div>
+        </div>
+        <div class="title">
+            {{movie.Title || ''}}
+        </div>
+        <div class="type">
+            {{movie.Type || ''}}
+        </div>
+    </div>
+}
+</div>

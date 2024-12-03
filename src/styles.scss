@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+// Import Angular Material theming functions
+// Import Angular Material theming
+body {
+    margin: 0;  /* Remove the default margin */
+    background: #060528;
+    color: #f8f8f8;
+}

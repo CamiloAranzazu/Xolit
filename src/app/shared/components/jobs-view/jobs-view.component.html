@@ -1,0 +1,20 @@
+<div class="jobs">
+    <div class="job-item" *ngFor="let obj of service!.jobs | keyvalue">
+        <img src="https://xolit.com/wp-content/uploads/2023/06/Logo-Solo-scaled.webp" alt="" width="250" height="30">
+        <span class="job-title" *ngIf="obj!.value!.title">
+          {{obj!.value!.title || ''}}
+        </span>
+        <span class="job-description" *ngIf="obj!.value!.description">
+          {{obj!.value!.description || ''}}
+        </span>
+        <div class="sk-chase">
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+            <div class="sk-chase-dot"></div>
+        </div>
+    </div>
+</div>
+
